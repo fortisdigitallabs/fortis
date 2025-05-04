@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fortis Digital Labs - Launching Soon</title>
+  <link rel="icon" href="./logo.png" type="image/x-icon">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background: #0e0e0e;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+    img.logo {
+      width: 220px;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+    h2 {
+      font-size: 1.2em;
+      font-weight: 400;
+      margin-bottom: 40px;
+      color: #00bcd4;
+    }
+    .countdown {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      font-size: 2em;
+    }
+    .countdown div {
+      background: #1c1c1c;
+      padding: 20px;
+      border-radius: 10px;
+      min-width: 80px;
+    }
+    .label {
+      font-size: 0.5em;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <img class="logo" src="./logo.png" alt="Fortis Digital Labs Logo" />
+  <h1>Fortis Digital Labs is Warming Up the Future</h1>
+  <h2>Engineering the Future of Digital World</h2>
+  <div class="countdown" id="countdown">
+    <div><span id="days">00</span><div class="label">Days</div></div>
+    <div><span id="hours">00</span><div class="label">Hours</div></div>
+    <div><span id="minutes">00</span><div class="label">Minutes</div></div>
+    <div><span id="seconds">00</span><div class="label">Seconds</div></div>
+  </div>
+
+  <script>
+    const launchDate = new Date("May 29, 2025 00:00:00").getTime();
+
+    const updateCountdown = () => {
+      const now = new Date().getTime();
+      const gap = launchDate - now;
+
+      const second = 1000;
+      const minute = second * 60;
+      const hour = minute * 60;
+      const day = hour * 24;
+
+      const d = Math.floor(gap / day);
+      const h = Math.floor((gap % day) / hour);
+      const m = Math.floor((gap % hour) / minute);
+      const s = Math.floor((gap % minute) / second);
+
+      document.getElementById("days").innerText = d;
+      document.getElementById("hours").innerText = h;
+      document.getElementById("minutes").innerText = m;
+      document.getElementById("seconds").innerText = s;
+    };
+
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
