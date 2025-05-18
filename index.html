@@ -1,123 +1,960 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fortis Digital Labs - Launching Soon</title>
-  <link rel="icon" href="./favicon.png" type="image/png">
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Fortis Digital Labs",
-  "url": "https://www.fortisdigitallabs.com",
-  "logo": "https://www.fortisdigitallabs.com/logo.png"
-}
-</script>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    body {
-      background: #0e0e0e;
-      color: #ffffff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      text-align: center;
-      padding: 20px;
-    }
-    img.logo {
-      width: 200px;
-      max-width: 80vw;
-      margin-bottom: 20px;
-    }
-    h1 {
-      font-size: 2.2em;
-      margin-bottom: 10px;
-      color: #ffffff;
-    }
-    h2 {
-      font-size: 1em;
-      font-weight: 400;
-      margin-bottom: 30px;
-      color: #00bcd4;
-    }
-    .countdown {
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-      flex-wrap: wrap;
-      font-size: 1.8em;
-    }
-    .countdown div {
-      background: #1c1c1c;
-      padding: 15px;
-      border-radius: 10px;
-      min-width: 70px;
-      margin-bottom: 10px;
-    }
-    .label {
-      font-size: 0.5em;
-      color: #aaa;
-    }
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 1.8em;
-      }
-      h2 {
-        font-size: 0.9em;
-      }
-      .countdown {
-        font-size: 1.4em;
-      }
-      .countdown div {
-        padding: 10px;
-        min-width: 60px;
-      }
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Fortis Digital Labs</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
 </head>
-<body>
-  <img class="logo" src="./logo.png" alt="Fortis Digital Labs Logo" />
-  <h1>Fortis Digital Labs is Warming Up the Future</h1>
-  <h2>Engineering the Future of Digital World</h2>
-  <div class="countdown" id="countdown">
-    <div><span id="days">00</span><div class="label">Days</div></div>
-    <div><span id="hours">00</span><div class="label">Hours</div></div>
-    <div><span id="minutes">00</span><div class="label">Minutes</div></div>
-    <div><span id="seconds">00</span><div class="label">Seconds</div></div>
-  </div>
 
-  <script>
-    const launchDate = new Date("May 29, 2025 00:00:00").getTime();
+<body class="index-page">
 
-    const updateCountdown = () => {
-      const now = new Date().getTime();
-      const gap = launchDate - now;
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
-      const second = 1000;
-      const minute = second * 60;
-      const hour = minute * 60;
-      const day = hour * 24;
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="assets/img/favicon.png" alt="">
+        <h1 class="sitename">Fortis Digital Labs</h1>
+      </a>
 
-      const d = Math.floor(gap / day);
-      const h = Math.floor((gap % day) / hour);
-      const m = Math.floor((gap % hour) / minute);
-      const s = Math.floor((gap % minute) / second);
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#vision-mission">Vision & Mission</a></li>
+          <li><a href="careers.html">Careers</a></li>
 
-      document.getElementById("days").innerText = d;
-      document.getElementById("hours").innerText = h;
-      document.getElementById("minutes").innerText = m;
-      document.getElementById("seconds").innerText = s;
-    };
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
 
-    setInterval(updateCountdown, 1000);
-  </script>
+      <a class="cta-btn" href="index.html#contact">Contact Us</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+      <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in">
+
+      <div class="container d-flex flex-column align-items-center">
+        <h2 data-aos="fade-up" data-aos-delay="100">ENGINEERING THE FUTURE OF DIGITAL WORLD</h2>
+        <p data-aos="fade-up" data-aos-delay="200">We help businesses grow with powerful software, DevOps, and cloud
+          infrastructure.</p>
+        <div class="d-flex mt-4" data-aos="fade-up" data-aos-delay="300">
+          <a href="#about" class="btn-get-started">Contact Us</a>
+        </div>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h3>About Us</h3>
+            <img src="assets/img/about.jpg" class="img-fluid rounded-4 mb-4" alt="">
+            <p>Beyond technical solutions, Fortis Digital Labs also invests in building lasting partnerships by offering
+              strategic consulting, comprehensive staff training, and talent augmentation services—from associate
+              engineers to CTO-level professionals. Our collaborative approach ensures your organization is equipped not
+              just with technology, but with the knowledge and capability to leverage it effectively.</p>
+            <p>Fortis Digital Labs isn't just another tech provider; we are your trusted partner in navigating the
+              digital future.</p>
+
+
+          </div>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
+            <div class="content ps-0 ps-lg-5">
+              <p>At Fortis Digital Labs, we engineer the future of the digital world through cutting-edge cloud
+                technologies, agile software architecture, and uncompromising cybersecurity. Founded with a vision to
+                simplify the complexities of digital transformation, we specialize in delivering innovative solutions
+                that empower businesses to thrive in an ever-evolving technological landscape.</p>
+              <p>Our team comprises seasoned experts in cloud computing, DevOps practices, infrastructure management,
+                and cybersecurity, dedicated to ensuring that every solution we provide is secure, scalable, and
+                tailored precisely to our clients' needs. Whether it’s migrating legacy systems to advanced cloud
+                platforms, orchestrating Kubernetes clusters, or safeguarding critical digital assets, we approach every
+                project with precision, efficiency, and a commitment to excellence.</p>
+
+              <div class="position-relative mt-4">
+                <img src="assets/img/about-2.jpg" class="img-fluid rounded-4" alt="">
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats section light-background">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-lightning-charge-fill color-blue flex-shrink-0"></i>
+              <div>
+                <h4>Engineering Excellence</h4>
+                <p>Built by certified experts in cloud, DevOps, and security to deliver resilient digital
+                  infrastructure.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-shield-check color-orange flex-shrink-0"></i>
+              <div>
+                <h4>Security by Design</h4>
+                <p>Compliance-ready architecture built to align with CBSL, PCI-DSS, and ISO standards.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-gear-fill color-green flex-shrink-0"></i>
+              <div>
+                <h4>Automation-Driven</h4>
+                <p>GitOps, CI/CD, and infrastructure-as-code streamline operations and eliminate human error.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-people-fill color-pink flex-shrink-0"></i>
+              <div>
+                <h4>Client-Centric Team</h4>
+                <p>We act as a strategic partner, not just a vendor, delivering value beyond delivery.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+    </section><!-- /Stats Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Services</h2>
+        <p>Featured Services<br></p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-5">
+
+          <!-- Cloud & DevOps Services -->
+          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+            <div class="service-item">
+              <div class="img">
+                <img src="assets/img/services-1.jpg" class="img-fluid" alt="">
+              </div>
+              <div class="details position-relative">
+                <div class="icon">
+                  <i class="bi bi-cloud-arrow-up"></i>
+                </div>
+                <h3>Cloud & DevOps Services</h3>
+                <p>Design, deploy, and manage scalable infrastructure across AWS,
+                  GCP, and Azure with Infrastructure as Code, CI/CD automation, containerization, and
+                  Kubernetes orchestration.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Managed Services -->
+          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+            <div class="service-item">
+              <div class="img">
+                <img src="assets/img/services-2.jpg" class="img-fluid" alt="">
+              </div>
+              <div class="details position-relative">
+                <div class="icon">
+                  <i class="bi bi-shield-check"></i>
+                </div>
+                <h3>Managed Services</h3>
+                <p>24x7 monitoring, incident response, patching, optimization, and full-
+                  stack infrastructure management with strict SLAs.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Software Engineering -->
+          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+            <div class="service-item">
+              <div class="img">
+                <img src="assets/img/services-3.jpg" class="img-fluid" alt="">
+              </div>
+              <div class="details position-relative">
+                <div class="icon">
+                  <i class="bi bi-code-slash"></i>
+                </div>
+                <h3>Software Engineering</h3>
+                <p>Agile delivery of web, mobile, and enterprise-grade applications
+                  using Java, Spring Boot, Node.js, Go, React, Flutter, and more.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Resource Outsourcing -->
+          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+            <div class="service-item">
+              <div class="img">
+                <img src="assets/img/services-4.jpg" class="img-fluid" alt="">
+              </div>
+              <div class="details position-relative">
+                <div class="icon">
+                  <i class="bi bi-people"></i>
+                </div>
+                <h3>Resource Outsourcing</h3>
+                <p>On-demand staffing solutions from Associate Engineers to Senior
+                  Architects and DevOps Specialists, tailored to client-specific delivery models.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Application Modernization -->
+          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+            <div class="service-item">
+              <div class="img">
+                <img src="assets/img/services-5.jpg" class="img-fluid" alt="">
+              </div>
+              <div class="details position-relative">
+                <div class="icon">
+                  <i class="bi bi-arrow-repeat"></i>
+                </div>
+                <h3>Application Modernization</h3>
+                <p>Transform legacy systems into microservices or container-
+                  native platforms with enhanced scalability and resilience.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cybersecurity Services -->
+          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+            <div class="service-item">
+              <div class="img">
+                <img src="assets/img/services-6.jpg" class="img-fluid" alt="">
+              </div>
+              <div class="details position-relative">
+                <div class="icon">
+                  <i class="bi bi-shield-lock"></i>
+                </div>
+                <h3>Cybersecurity Services</h3>
+                <p>Infrastructure and application-level VA/PT, security hardening,
+                  compliance audits (MBSS, CIS, PCI-DSS), and implementation of Zero Trust Architecture.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Staff Training & Upskilling -->
+          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+            <div class="service-item">
+              <div class="img">
+                <img src="assets/img/services-7.jpg" class="img-fluid" alt="">
+              </div>
+              <div class="details position-relative">
+                <div class="icon">
+                  <i class="bi bi-journal-code"></i>
+                </div>
+                <h3>Staff Training & Upskilling</h3>
+                <p>Practical, hands-on training programs for in-house teams
+                  covering cloud engineering, Kubernetes, DevSecOps, secure coding, and architectural best
+                  practices.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+    </section><!-- /Services Section -->
+
+    <!-- Clients Section -->
+    <section id="clients" class="clients section light-background">
+
+      <div class="container" data-aos="fade-up">
+        <div class="row gy-4 justify-content-center">
+
+          <div class="col-xl-2 col-md-3 col-5 client-logo">
+            <img src="assets/img/certifications/aws.png" class="img-fluid" alt="AWS">
+          </div>
+
+          <div class="col-xl-2 col-md-3 col-5 client-logo">
+            <img src="assets/img/certifications/gcp.png" class="img-fluid" alt="GCP">
+          </div>
+
+          <div class="col-xl-2 col-md-3 col-5 client-logo">
+            <img src="assets/img/certifications/azure.png" class="img-fluid" alt="Azure">
+          </div>
+
+          <div class="col-xl-2 col-md-3 col-5 client-logo">
+            <img src="assets/img/certifications/kubernetes.png" class="img-fluid" alt="Kubernetes">
+          </div>
+
+          <div class="col-xl-2 col-md-3 col-5 client-logo">
+            <img src="assets/img/certifications/ccna.png" class="img-fluid" alt="CCNA">
+          </div>
+
+
+
+        </div>
+      </div>
+
+
+    </section><!-- /Clients Section -->
+
+    <!-- Features Section -->
+    <section id="features" class="features section">
+
+      <div class="container">
+        <ul class="nav nav-tabs row d-flex" data-aos="fade-up" data-aos-delay="100">
+          <li class="nav-item col-3">
+            <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#features-tab-1">
+              <i class="bi bi-geo-alt-fill"></i>
+              <h4 class="d-none d-lg-block">Global Delivery, Local Insight</h4>
+            </a>
+          </li>
+          <li class="nav-item col-3">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-2">
+              <i class="bi bi-tools"></i>
+              <h4 class="d-none d-lg-block">Engineering-First Culture</h4>
+            </a>
+          </li>
+          <li class="nav-item col-3">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-3">
+              <i class="bi bi-diagram-3-fill"></i>
+              <h4 class="d-none d-lg-block">Flexible Engagement Models</h4>
+            </a>
+          </li>
+          <li class="nav-item col-3">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-4">
+              <i class="bi bi-shield-lock-fill"></i>
+              <h4 class="d-none d-lg-block">Compliance & Security</h4>
+            </a>
+          </li>
+        </ul>
+
+        <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
+          <!-- TAB 1 -->
+          <div class="tab-pane fade active show" id="features-tab-1">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                <h3>Global Delivery, Local Insight</h3>
+                <p class="fst-italic">Headquartered in Colombo, Sri Lanka, Fortis Digital Labs bridges global innovation
+                  with regional expertise.</p>
+                <ul>
+                  <li><i class="bi bi-check2-all"></i> Strong presence in Asia-Pacific with growing international
+                    clientele</li>
+                  <li><i class="bi bi-check2-all"></i> Understanding of local regulations and business culture ensures
+                    smooth execution</li>
+                  <li><i class="bi bi-check2-all"></i> Global delivery models with time zone-aligned support</li>
+                </ul>
+                <p>Whether serving a government entity in Sri Lanka or a fintech startup in Singapore, we bring
+                  culturally relevant, technically world-class solutions tailored to each client's operational context.
+                </p>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="assets/img/global-delivery.jpg" alt="Global Delivery" class="img-fluid">
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 2 -->
+          <div class="tab-pane fade" id="features-tab-2">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                <h3>Engineering-First Culture</h3>
+                <p class="fst-italic">At our core, we're engineers. Not buzzword chasers—but problem solvers,
+                  architects, and builders.</p>
+                <ul>
+                  <li><i class="bi bi-check2-all"></i> Team of certified professionals across AWS, Azure, GCP,
+                    Kubernetes, and security domains</li>
+                  <li><i class="bi bi-check2-all"></i> Product-centric mindset with a bias toward clean, scalable
+                    architecture</li>
+                  <li><i class="bi bi-check2-all"></i> Continuous R&D and knowledge sharing across the organization</li>
+                </ul>
+                <p>We believe in technical depth, not surface-level solutions. Our culture fosters innovation,
+                  responsibility, and ownership—delivering solutions that are built to last and evolve with your
+                  business.</p>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="assets/img/engineering-culture.jpg" alt="Engineering Culture" class="img-fluid">
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 3 -->
+          <div class="tab-pane fade" id="features-tab-3">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                <h3>Flexible Engagement Models</h3>
+                <p class="fst-italic">Your needs come first—our models flex to meet them.</p>
+                <ul>
+                  <li><i class="bi bi-check2-all"></i> Turnkey project delivery with end-to-end accountability</li>
+                  <li><i class="bi bi-check2-all"></i> Long-term managed services with proactive optimization</li>
+                  <li><i class="bi bi-check2-all"></i> Staff augmentation from Associate to CTO-level experts</li>
+                </ul>
+                <p>Whether you need a dedicated team, a one-off architecture build, or just a pair of extra hands during
+                  a critical release, we align our model to your operation—seamlessly integrating with your teams and
+                  goals.</p>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="assets/img/engagement-models.jpg" alt="Flexible Engagements" class="img-fluid">
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 4 -->
+          <div class="tab-pane fade" id="features-tab-4">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                <h3>Compliance & Security</h3>
+                <p class="fst-italic">Security isn’t a feature—it’s a foundation.</p>
+                <ul>
+                  <li><i class="bi bi-check2-all"></i> End-to-end secure architecture from code to cloud</li>
+                  <li><i class="bi bi-check2-all"></i> Regulatory alignment: CBSL, PCI-DSS, GDPR, ISO/IEC 27001</li>
+                  <li><i class="bi bi-check2-all"></i> Zero-trust and multi-factor security models by default</li>
+                </ul>
+                <p>Our solutions are designed to pass the most stringent audits—while keeping performance, scalability,
+                  and usability in mind. We proactively embed security into your digital DNA, not just as an add-on.</p>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="assets/img/security-first.jpg" alt="Security Compliance" class="img-fluid">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </section><!-- /Features Section -->
+
+    <!-- Services 2 Section -->
+    <section id="services-2" class="services-2 section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Services</h2>
+        <p>CHECK OUR SERVICES</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+        <div class="row gy-4">
+
+          <!-- Consulting & Strategy -->
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item d-flex position-relative h-100">
+              <i class="bi bi-lightbulb icon flex-shrink-0"></i>
+              <div>
+                <h4 class="title">Consulting & Strategy</a></h4>
+                <p class="description">
+                  Cloud readiness assessments, digital transformation roadmaps, FinOps optimization, and regulatory
+                  compliance guidance including ISO 27001, MBSS, and PCI-DSS.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Platform & DevOps Engineering -->
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item d-flex position-relative h-100">
+              <i class="bi bi-cpu icon flex-shrink-0"></i>
+              <div>
+                <h4 class="title">Platform & DevOps Engineering</a></h4>
+                <p class="description">
+                  PaaS setup, CI/CD pipelines, GitOps with ArgoCD, Kubernetes-as-a-Service, and golden path enablement
+                  for enhanced developer experience.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cloud Infrastructure & Managed Services -->
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item d-flex position-relative h-100">
+              <i class="bi bi-cloud-check icon flex-shrink-0"></i>
+              <div>
+                <h4 class="title">Cloud Infrastructure & Managed Services</a></h4>
+                <p class="description">
+                  Architecting and managing multi-cloud infrastructure (AWS, Azure, GCP), including EKS, serverless,
+                  DR/HA, and 24×7 SLA-based operations.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Security Engineering & Compliance -->
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item d-flex position-relative h-100">
+              <i class="bi bi-shield-lock icon flex-shrink-0"></i>
+              <div>
+                <h4 class="title">Security Engineering & Compliance</a></h4>
+                <p class="description">
+                  Secure DevOps pipelines, VA/PT assessments, Zero Trust architecture, SOC setup, red teaming, and
+                  compliance automation.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Data Engineering & Analytics -->
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-item d-flex position-relative h-100">
+              <i class="bi bi-bar-chart-line icon flex-shrink-0"></i>
+              <div>
+                <h4 class="title">Data Engineering & Analytics</a></h4>
+                <p class="description">
+                  Data lakes, stream processing, BI dashboards, and enterprise-scale ETL with platforms like Kafka,
+                  Snowflake, BigQuery, and Power BI.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- AI & Intelligent Automation -->
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="service-item d-flex position-relative h-100">
+              <i class="bi bi-robot icon flex-shrink-0"></i>
+              <div>
+                <h4 class="title">AI & Intelligent Automation</a></h4>
+                <p class="description">
+                  ML model deployment, MLOps, OCR/document understanding, RPA solutions, and predictive monitoring with
+                  AIOps.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Enterprise Integration -->
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="700">
+            <div class="service-item d-flex position-relative h-100">
+              <i class="bi bi-diagram-3 icon flex-shrink-0"></i>
+              <div>
+                <h4 class="title">Enterprise & System Integration</a></h4>
+                <p class="description">
+                  API-first integrations across ERP, CRM, payment gateways, and messaging platforms using ESB/iPaaS like
+                  MuleSoft, Apigee, and WSO2.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Engineering -->
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="800">
+            <div class="service-item d-flex position-relative h-100">
+              <i class="bi bi-box-seam icon flex-shrink-0"></i>
+              <div>
+                <h4 class="title">Product Engineering & Support</a></h4>
+                <p class="description">
+                  Full-cycle SaaS product engineering from MVP to multi-tenant deployment, including cross-platform
+                  mobile app development with Flutter/React Native.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Resource Outsourcing -->
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="900">
+            <div class="service-item d-flex position-relative h-100">
+              <i class="bi bi-people icon flex-shrink-0"></i>
+              <div>
+                <h4 class="title">Resource Outsourcing & Staff Augmentation</a></h4>
+                <p class="description">
+                  Certified engineers across disciplines with flexible staffing—from short-term projects to long-term
+                  embedded teams, onsite or remote.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Staff Training -->
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="1000">
+            <div class="service-item d-flex position-relative h-100">
+              <i class="bi bi-journal-code icon flex-shrink-0"></i>
+              <div>
+                <h4 class="title">Staff Training & Upskilling</a></h4>
+                <p class="description">
+                  Hands-on bootcamps and certification training in cloud, Kubernetes, GitOps, DevSecOps, and secure
+                  coding best practices.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+    </section><!-- /Services 2 Section -->
+
+
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Portfolio</h2>
+        <p>CHECK OUR PORTFOLIO</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+
+          </ul><!-- End Portfolio Filters -->
+
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/portfolio-product-1.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>AI Based Financial Advisor</h4>
+                  <p>Take Control of your finances with power of AI</p>
+                  <a href="assets/img/portfolio/portfolio-product-1.jpg" title="AI Based Financial Advisor"
+                    data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
+                      class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                      class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+          </div><!-- End Portfolio Container -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Portfolio Section -->
+
+    <!-- Team Section -->
+    <section id="vision-mission" class="team section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title mb-5" data-aos="fade-up">
+        <h2>Mission & Vision</h2>
+        <p>WHAT DRIVES FORTIS DIGITAL LABS</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-5 justify-content-center">
+
+          <!-- Mission -->
+          <div class="col-lg-6 col-md-12" data-aos="fade-up" data-aos-delay="100">
+            <div class="member text-center">
+              <div class="icon mb-3">
+                <i class="bi bi-lightning" style="font-size: 2rem; color: #0d6efd;"></i>
+              </div>
+              <div class="member-info">
+                <h4>Our Mission</h4>
+                <p>
+                  To engineer secure, scalable, and intelligent digital platforms that help organizations
+                  accelerate innovation, enhance operational efficiency, and unlock long-term value through modern
+                  cloud-native technologies.
+                </p>
+              </div>
+            </div>
+          </div><!-- End Mission -->
+
+          <!-- Vision -->
+          <div class="col-lg-6 col-md-12" data-aos="fade-up" data-aos-delay="200">
+            <div class="member text-center">
+              <div class="icon mb-3">
+                <i class="bi bi-eye" style="font-size: 2rem; color: #0d6efd;"></i>
+              </div>
+              <div class="member-info">
+                <h4>Our Vision</h4>
+                <p>
+                  To be the most trusted technology partner in the region, known for delivering future-ready
+                  cloud, DevOps, and cybersecurity solutions that empower businesses to thrive in a digital-first world.
+                </p>
+              </div>
+            </div>
+          </div><!-- End Vision -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Mission & Vision Section -->
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <p>Get in Touch with Fortis Digital Labs</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+          <div class="col-lg-6 ">
+            <div class="row gy-4">
+
+              <div class="col-lg-12">
+                <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up"
+                  data-aos-delay="200">
+                  <i class="bi bi-geo-alt"></i>
+                  <h3>Address</h3>
+                  <p>33 Park St, Colombo 0200, Sri Lanka</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="col-md-6">
+                <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up"
+                  data-aos-delay="300">
+                  <i class="bi bi-telephone"></i>
+                  <h3>Call Us</h3>
+                  <p>+94 77 733 2492</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="col-md-6">
+                <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up"
+                  data-aos-delay="400">
+                  <i class="bi bi-envelope"></i>
+                  <h3>Email Us</h3>
+                  <p>info@fortisdigitallabs.com</p>
+                </div>
+              </div><!-- End Info Item -->
+
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <form id="contact-form" class="php-email-form" data-aos="fade-up" data-aos-delay="500">
+              <div class="row gy-4">
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+                </div>
+                <div class="col-md-12">
+                  <textarea class="form-control" name="message" rows="4" placeholder="Message" required></textarea>
+                </div>
+                <div class="col-md-12 text-center">
+                  <div class="loading" style="display: none;">Loading</div>
+                  <div class="error-message" style="display: none; color: red;"></div>
+                  <div class="sent-message" style="display: none; color: green;">Your message has been sent. Thank you!
+                  </div>
+                  <button type="submit">Send Message</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <script>
+            document.getElementById('contact-form').addEventListener('submit', function (e) {
+              e.preventDefault();
+
+              const form = this;
+              const loading = form.querySelector('.loading');
+              const sentMessage = form.querySelector('.sent-message');
+              const errorMessage = form.querySelector('.error-message');
+
+              loading.style.display = 'block';
+              sentMessage.style.display = 'none';
+              errorMessage.style.display = 'none';
+
+              // Fake delay and response
+              setTimeout(() => {
+                loading.style.display = 'none';
+
+                // Basic validation
+                const isValid = form.checkValidity();
+                if (isValid) {
+                  sentMessage.style.display = 'block';
+                  form.reset();
+                } else {
+                  errorMessage.textContent = "Please fill out all fields correctly.";
+                  errorMessage.style.display = 'block';
+                }
+              }, 1000);
+            });
+          </script>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">Fortis Digital Labs</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>33 Park St,</p>
+            <p>Colombo 0200,</p>
+            <p>Sri Lanka</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+94 77 733 2492</span></p>
+            <p><strong>Email:</strong> <span>info@fortisdigitallabs.com</span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.facebook.com/fortisdigitallabs"><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/fortis-digital-labs"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Industries</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="#services-2">Fintech & Banking</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#services-2">E-Commerce & Retail</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#services-2">HealthTech</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#services-2">Government & Public Sector</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#services-2">EdTech</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#services-2">Enterprise SaaS</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Company</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#about">About us</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#services">Services</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#portfolio">Portfolio</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="terms-and-conditions.html">Terms and Conditions</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="privacy-policy.html">Privacy and Policy</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="careers.html">Careers</a></li>
+          </ul>
+        </div>
+
+
+
+        <div class="col-lg-4 col-md-12 footer-newsletter">
+          <h4>Our Newsletter</h4>
+          <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
+
+          <form id="newsletter-form">
+            <div class="newsletter-form">
+              <input type="email" name="email" id="newsletter-email" placeholder="Enter your email" required>
+              <input type="submit" value="Subscribe">
+            </div>
+            <div class="loading" style="display: none;">Loading...</div>
+            <div class="error-message" style="display: none; color: red;"></div>
+            <div class="sent-message" style="display: none; color: green;">Your subscription request has been sent.
+              Thank you!</div>
+          </form>
+        </div>
+
+        <script>
+          document.getElementById('newsletter-form').addEventListener('submit', function (e) {
+            e.preventDefault(); // prevent actual submission
+            const emailInput = document.getElementById('newsletter-email');
+            const loading = this.querySelector('.loading');
+            const sentMessage = this.querySelector('.sent-message');
+            const errorMessage = this.querySelector('.error-message');
+
+            loading.style.display = 'block';
+            sentMessage.style.display = 'none';
+            errorMessage.style.display = 'none';
+
+            // Fake a successful submission after 1 second
+            setTimeout(() => {
+              loading.style.display = 'none';
+              if (emailInput.value && emailInput.validity.valid) {
+                sentMessage.style.display = 'block';
+                emailInput.value = '';
+              } else {
+                errorMessage.textContent = 'Please enter a valid email.';
+                errorMessage.style.display = 'block';
+              }
+            }, 1000);
+          });
+        </script>
+
+
+        <div class="container copyright text-center mt-4">
+          <p>© <span>Copyright</span> <strong class="px-1 sitename">Fortis Digital Labs (pvt) ltd</strong> <span>All
+              Rights
+              Reserved</span></p>
+        </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
 </body>
+
 </html>
