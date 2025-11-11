@@ -65,6 +65,7 @@
     <section id="hero" class="hero section dark-background">
 
       <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in">
+      <div id="hero-particles" aria-hidden="true"></div>
 
       <div class="container d-flex flex-column align-items-center">
         <h2 data-aos="fade-up" data-aos-delay="100">ENGINEERING THE FUTURE OF DIGITAL WORLD</h2>
@@ -652,30 +653,65 @@
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
               <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/portfolio-product-1.jpg" class="img-fluid" alt="">
+                <img src="assets/img/portfolio/portfolio-product-1.png" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <h4>AI Based Financial Advisor</h4>
+                  <h4>AI Powered Personal Financial Advisor</h4>
                   <p>Take Control of your finances with power of AI</p>
-                  <a href="assets/img/portfolio/portfolio-product-1.jpg" title="AI Based Financial Advisor"
+                  <a href="assets/img/portfolio/portfolio-product-1.png" title="AI Powered Personal Financial Advisor, Take Control of your finances with power of AI"
                     data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
                       class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i
-                      class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
               <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/portfolio-product-2.jpg" class="img-fluid" alt="">
+                <img src="assets/img/portfolio/portfolio-product-2.png" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <h4>AI Based EKYC</h4>
-                  <p>AI-Powered eKYC for Seamless and Secure Digital Identity Verification</p>
-                  <a href="assets/img/portfolio/portfolio-product-2.jpg" title="AI Based EKYC"
+                  <h4>Legal Litigation Tracker</h4>
+                  <p>Simplify Litigation Management, Smart, Secure, and Seamless</p>
+                  <a href="assets/img/portfolio/portfolio-product-2.png" title="Legal Litigation Tracker, Simplify Litigation Management, Smart, Secure, and Seamless"
                     data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
                       class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i
-                      class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/portfolio-product-3.png" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>SharePay</h4>
+                  <p>Experience Smarter Payments with SharePay</p>
+                  <a href="assets/img/portfolio/portfolio-product-3.png" title="SharePay, Experience Smarter Payments with SharePay"
+                    data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
+                      class="bi bi-zoom-in"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/portfolio-product-4.png" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>RoundUp Savings</h4>
+                  <p>Turn Every Transaction into a Saving</p>
+                  <a href="assets/img/portfolio/portfolio-product-4.png" title="RoundUp Savings, Turn Every Transaction into a Saving"
+                    data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
+                      class="bi bi-zoom-in"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/portfolio-product-5.png" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>AI Powered KYC</h4>
+                  <p>A fully automated 7-step KYC verification process powered by AI and biometrics.</p>
+                  <a href="assets/img/portfolio/portfolio-product-5.png" title="AI Powered KYC, A fully automated 7-step KYC verification process powered by AI and biometrics."
+                    data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
+                      class="bi bi-zoom-in"></i></a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
@@ -970,8 +1006,80 @@
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      if (!window.particlesJS) return;
+
+      particlesJS('hero-particles', {
+        "particles": {
+          "number": {
+            "value": 80,
+            "density": {
+              "enable": true,
+              "value_area": 800
+            }
+          },
+          "color": {
+            "value": "#ffffff"
+          },
+          "shape": {
+            "type": "circle"
+          },
+          "opacity": {
+            "value": 0.5,
+            "random": false
+          },
+          "size": {
+            "value": 3,
+            "random": true
+          },
+          "line_linked": {
+            "enable": true,
+            "distance": 150,
+            "color": "#ffffff",
+            "opacity": 0.4,
+            "width": 1
+          },
+          "move": {
+            "enable": true,
+            "speed": 3,
+            "direction": "none",
+            "random": false,
+            "straight": false,
+            "out_mode": "out",
+            "bounce": false
+          }
+        },
+        "interactivity": {
+          "detect_on": "canvas",
+          "events": {
+            "onhover": {
+              "enable": true,
+              "mode": "repulse"
+            },
+            "onclick": {
+              "enable": true,
+              "mode": "push"
+            },
+            "resize": true
+          },
+          "modes": {
+            "repulse": {
+              "distance": 100,
+              "duration": 0.8
+            },
+            "push": {
+              "particles_nb": 4
+            }
+          }
+        },
+        "retina_detect": true
+      });
+    });
+  </script>
 
 </body>
 
